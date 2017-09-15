@@ -8,7 +8,7 @@ RUN \
     chmod -R 777 /opt/app && \
     apk update && \
     apk --no-cache --update add \
-      git make g++ wget curl inotify-tools imagemagick bash \
+      git make g++ wget curl inotify-tools imagemagick \
       nodejs nodejs-current-npm && \
     npm install npm -g --no-progress && \
     update-ca-certificates --fresh && \
@@ -17,8 +17,6 @@ RUN \
 # Add local node module binaries to PATH
 ENV PATH=./node_modules/.bin:$PATH \
     HOME=/opt/app
-
-RUN ln -s /bin/sh /bin/source
 
 # Install Hex+Rebar
 RUN mix local.hex --force && \

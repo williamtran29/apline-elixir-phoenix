@@ -8,7 +8,7 @@ RUN \
     chmod -R 777 /opt/app && \
     apk update && \
     apk --no-cache --update add \
-      git make g++ wget curl inotify-tools freetype libpng libjpeg-turbo imagemagick \
+      git make g++ wget curl inotify-tools freetype libpng libjpeg-turbo imagemagick imagemagick-dev imagemagick-c++ \
       nodejs nodejs-current-npm && \
     npm install npm -g --no-progress && \
     update-ca-certificates --fresh && \
